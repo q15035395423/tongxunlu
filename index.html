@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-text-size-adjust: none;
+		text-decoration: none;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	header{
+		width: 100%;
+		height: 1rem;
+		background: #03a9f4;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	header input{
+		width: 95%;
+		height: 0.8rem;
+		background: #fff;
+		border: none;
+		border-radius: 3px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset;
+		outline: none;
+		text-align: center;
+		font-size: 0.3rem;
+	}
+	dl{
+		width: 100%;
+		height: auto;
+		padding: 1rem 0 0;
+	}
+	dt,.tip{
+		height: 1rem;
+		border-bottom: 1px solid #f6f6f6;
+		font-size: 0.24rem;
+		line-height: 1rem;
+		background: #f6f6f6;
+		padding-left: 0.26rem;
+	}
+	.tip{
+		width: 100%;
+		position: fixed;
+		top: 1rem;
+	}
+	dd{
+		height: 1rem;
+		font-size: 0.24rem;
+		line-height: 1rem;
+		padding-left: 0.26rem;
+	}
+	a{
+		display: block;
+		text-decoration: none;
+		font-size: 0.3rem;                                              
+	}
+	.slide{
+		width: 0.3rem;
+		height: auto;
+		background: blue;
+		position: fixed;
+		right: 0.1rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.slide li{
+		width: 100%;
+		height: 0.3rem;
+		margin-bottom: 1px;
+		text-align: center;
+		line-height: 0.3rem;
+		color: #fff;
+		font-size: 0.25rem;
+	}
+</style>
+<body>
+	<header>
+		<input type="text" placeholder="搜索">
+	</header>
+	<div class="tip">A</div>
+	<dl>
+		<dt>A</dt>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dt>A</dt>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dt>A</dt>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dt>A</dt>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dt>A</dt>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+		<dd>
+			<a href="tel:110">张三</a>
+		</dd>
+	</dl>
+	<ul class="slide">
+		<!-- <li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li> -->
+	</ul>
+</body>
+</html>
+<script src="rem.js"></script>
+<script src="function.js"></script>
+<script>
+	/*
+	* id    姓名     电话         拼音
+	* 1     张三    123456789    zhangsan
+	*
+	*
+	* localStorage.contact = [{},{},{}]            存到本地
+	 */
+	$(function(){
+//		 let arr1 = [
+//		 	{id:1,name:'乔逸欣',tell:'15035395423',pinyin:'qiaoyixin'},
+//		 	{id:2,name:'刘伟杰',tell:'15035395423',pinyin:'liuweijie'},
+//		 	{id:3,name:'武子厚',tell:'15035395423',pinyin:'wuzihou'},
+//		 	{id:4,name:'王亚楠',tell:'15035395423',pinyin:'wangyanan'},
+//		 	{id:5,name:'李春刚',tell:'15035395423',pinyin:'lichungang'},
+//		 	{id:6,name:'段起航',tell:'15035395423',pinyin:'duanqihang'},
+//		 	{id:7,name:'马骏驰',tell:'15035395423',pinyin:'majunchi'},
+//		 	{id:8,name:'张亚云',tell:'15035395423',pinyin:'zhangyayun'},
+//		 	{id:9,name:'赵辉',tell:'15035395423',pinyin:'zhaohui'},
+//		 	{id:10,name:'李保禄',tell:'15035395423',pinyin:'libaolu'},
+//		 	{id:11,name:'李毅',tell:'15035395423',pinyin:'liyi'},
+//		 	{id:12,name:'赵大宝',tell:'15035395423',pinyin:'zhaodabao'},
+//		 	{id:13,name:'李四',tell:'15035395423',pinyin:'lisi'},
+//		 	{id:14,name:'张三',tell:'15035395423',pinyin:'zhangsan'},
+//		 	{id:15,name:'王五',tell:'15035395423',pinyin:'wangwu'},
+//		 	{id:16,name:'包拯',tell:'15035395423',pinyin:'baozheng'},
+//		 ];
+//		 localStorage.setItem('contact',JSON.stringify(arr1));
+		// localStorage.contact = JSON.stringify(arr1);
+		let data = JSON.parse(localStorage.getItem('contact')); /*字符串转对象*/
+		let dl = $('dl')[0];
+		let slide = $('.slide')[0];
+		let tip = $('.tip')[0];
+		let arr = [];
+		let height = $('header')[0].offsetHeight + $('.tip')[0].offsetHeight;
+		let search =$('input')[0];
+		render(data);
+		let dts = $('dt');
+		Array.prototype.forEach.call(dts,function(element){
+			arr.push(element.offsetTop);
+		});
+		window.addEventListener('scroll',function(){
+			let st = document.body.scrollTop || document.documentElement.scrollTop;
+			arr.forEach((element,index)=>{
+				if(st + height >= element){
+					tip.innerText = dts[index].innerText;
+				}
+			})
+		});
+		search.addEventListener('input',function(){
+			let v = this.value.trim();
+			let obj = data.filter(element=>element.pinyin.includes(v)||element.name.includes(v)||element.tell.includes(v));
+			render(obj);
+		})
+		function render(data){
+			dl.innerHTML = '';
+			slide.innerHTML = '';
+			let obj = {}; /*对象*/
+			data.forEach(element =>{     /*分类、遍历*/
+				let firstChar = element.pinyin.trim().charAt(0).toUpperCase();
+				if(!obj[firstChar]){
+					obj[firstChar] = [];  /*初始化*/
+				}
+				obj[firstChar].push(element);
+			})
+			console.log(obj);
+			let keys = Object.keys(obj).sort();
+			tip.innerText = keys[0];
+			keys.forEach(element =>{
+				// element
+				dl.innerHTML += `<dt>${element}</dt>`;
+				slide.innerHTML += `<li>${element}</li>`;
+				obj[element].forEach(v =>{
+					dl.innerHTML += `<dd>
+						<a href="tel:${v.tell}">
+							${v.name}
+						</a>
+					</dd>`;
+				})
+			})
+		}
+	})
+</script>
